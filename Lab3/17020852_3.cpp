@@ -1,4 +1,4 @@
-// The insertNodeAtPosition function.(Ham xoa 1 node o vi tri positions
+// The deleteNode function.(Ham xoa 1 node o vi tri positions)
 
 /*
  * SinglyLinkedListNode duoc dinh nghia nhu sau
