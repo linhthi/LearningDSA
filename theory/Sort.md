@@ -1,4 +1,4 @@
-# CHƯƠNG 2: sẮP XẾP - CÁC GIẢI THUẬT CƠ SỞ
+# CHƯƠNG 2: SẮP XẾP - CÁC GIẢI THUẬT CƠ SỞ
 ## 1.  Các định nghĩa
 ### 1.1 Bài toán sắp xếp
   Sắp xếp là một bài toán cơ sở trong xử lí thông tin. Trước hết nó phục vụ cho việc tìm kiếm dữ liệu. Thời gian thực hiện nhiều thuật giải sẽ được cải thiện đáng kể nếu dữ liệu đầu vào đã được sắp thứ tự.
@@ -56,7 +56,7 @@
   ####    Ý tưởng của phương pháp
       Đúng như tên gọi của nó, ý tưởng chính của phương pháp sắp xếp này là thực hiên duyệt từng cặp phần tử của mảng, nếu cặp nào chưa đuungs thứ tự cần có thì đổi chỗ hai phần tử cho nhau. Lặp lại việ này cho đến khi mảng được sắp xếp đúng thứ tự.
  ####     Chi tiết các bước
-    Bước 1: Bắt đầu từ mút phải a[nư, xét cặp phần tử cạnh nhau a[n], a[n-1]. Đổi chỗ chúng cho nhau nếu sai thứ tự. Nếu đúng thứ tự thì thôi. sau đó tiến thêm về trái một vị trí, nghĩa là xét các cặp a[n-1], a[n-2]/ lặp lại phép kiểm tra và đổi chỗ trên cho đến khi tới mút trái.
+    Bước 1: Bắt đầu từ mút phải a[n], xét cặp phần tử cạnh nhau a[n], a[n-1]. Đổi chỗ chúng cho nhau nếu sai thứ tự. Nếu đúng thứ tự thì thôi. sau đó tiến thêm về trái một vị trí, nghĩa là xét các cặp a[n-1], a[n-2]/ lặp lại phép kiểm tra và đổi chỗ trên cho đến khi tới mút trái.
     
     Sau bước này số nhỏ nhất sẽ ở vị trí thứ 1.
     
