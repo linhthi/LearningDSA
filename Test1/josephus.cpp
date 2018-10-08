@@ -13,20 +13,20 @@ int main()
   	fin.close();
   
 	vector<int> a(n+1);
-  //Sinh mang tu 1 den n
+  	//Sinh mang tu 1 den n
 	for (int i=1;i<=n;i++)
 		a[i]=i;
   
-  ofstream fout;
-  fout.open("output.txt");
+  	ofstream fout;
+  	fout.open("output.txt");
   
 	int dau=1;
-  int vtthuong;
+  	int vtthuong;
 	while (n>0)
 	{
 		vtthuong = m+dau-1;
 		while(vtthuong>n)
-			vtthuong = vtthuong - n;
+			vtthuong -= n;
 		fout <<a[vtthuong]<<" ";
 		dau=vtthuong;
 		//Xoa vi tri thuong
@@ -34,7 +34,7 @@ int main()
 			a[i]=a[i+1];
 		n--;
 	}
-  fout.close();
+  	fout.close();
   
 	return 0;
 }
