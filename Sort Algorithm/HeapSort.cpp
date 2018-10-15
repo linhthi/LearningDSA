@@ -1,45 +1,60 @@
 /**
- * Algorithmn Quick Sort
- */
- #include <iostream>
- #include <cmath>
- using namespace std;
- /*
-    This function takes last element as pivot,
-    the pivot element at its correct posittion
-    in sorted array, and places all small (smaller than pivot)
-    to left of pivot and all greater to right of pivote
- */
- int partition(int a[], int low, int high) {
-    int pivot = a[high];
-    int i = low -1;
-    for (int j = low; j<=high-1; j++) {
-        if (a[j] <= pivot)
-        {
-            i++;
-            swap(a[i], a[j]);
-        }
+    Heap Sort Algoritm
+*/
+#include <iostream>
+#include <cmath>
+using namespace std;
+/*
+To heapify a substree rooted with node i which is
+an index in a[]. n is size of heap
+*/
+void heapify(int a[], int n, int i)
+{
+    int largest = i; //Initialize largest as root
+    int l = 2*i;
+    int r = 2*i + 1;
+
+    // If left child is larger than root
+    if (l < n && a[l] > a[largest])
+        largest = l;
+    //If right child is larger than largest so far
+    if (r < n&& a[r] > a[largest])
+        largest = r;
+    //If largest is not root
+    if (largest != i)
+    {
+        swap(a[i], a[largest]);
+
+        //Recursively heapify the affected sub=stree
+        heapify(a, n, largest);
     }
-    swap(a[i+1], a[high]);
-    return i+1;
 }
-/* low -->Starting index, high --> Ending index */
- void quickSort(int a[], int low, int high) {
-     if (low < high)
-     {
-        int pi = partition(a, low, high);
+void heapSort(int a[], int n)
+{
+    //Build heap (rearrange array)
+    for (int i=n/2; i>=0; i--)
+        heapify(a, n, i);
 
-        quickSort(a, low, pi-1);
-        quickSort(a, pi + 1, high);
-     }
+    //One by one extract an element from heap
+    for (int i=n-1; i>=0; i--)
+    {
+        // Move current root to end
+        swap(a[0], a[i]);
+
+        //Call max heapify on the reduced heap
+        heapify(a, i, 0);
+    }
 }
-
-int main() {
-    int a[] = {1, 2, 8, 9, 5, 3, 10, 4};
-    quickSort(a,0,7);
-    for (int i=0; i<8; i++) {
+void printArray(int a[], int n) {
+    for (int i=0; i<n; i++) {
         cout << a[i] << " ";
     }
+}
+int main() {
+    int a[] = {3, 11, 9, 15, 4, 10};
+    int n = sizeof(a)/sizeof(a[0]);
+    heapSort(a, n);
+    printArray(a,n);
     return 0;
 }
 
