@@ -5,8 +5,7 @@
 #include <cmath>
 using namespace std;
 /*
-To heapify a substree rooted with node i which is
-an index in a[]. n is size of heap
+To heapify a substree rooted with node i which is an index in a[], n is size of heap
 */
 void heapify(int a[], int n, int i)
 {
@@ -25,7 +24,7 @@ void heapify(int a[], int n, int i)
     {
         swap(a[i], a[largest]);
 
-        //Recursively heapify the affected sub=stree
+        //Recursively heapify the affected sub-tree
         heapify(a, n, largest);
     }
 }
