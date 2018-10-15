@@ -9,6 +9,7 @@
     the pivot element at its correct posittion
     in sorted array, and places all small (smaller than pivot)
     to left of pivot and all greater to right of pivote
+    partition means : phân vùng
  */
  int partition(int a[], int low, int high) {
     int pivot = a[high];
